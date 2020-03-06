@@ -12,3 +12,5 @@ require "trails_near_me"
 
 require "irb"
 IRB.start(__FILE__)
+
+# This allows us to start up an IRB session in Ruby. 
