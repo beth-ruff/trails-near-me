@@ -6,31 +6,41 @@ class TrailsNearMe::CLI
     # all inside start method
 
     def start
-        # placeholders for what we'll do later
         puts "Hello there!"
-        puts "GETTING DATA FROM API ... PLEASE WAIT!"
-        puts "CREATING NEW OBJS"
-        display_info
-    end
-
-    def display_info
-        puts "please make selection:"
-        input = gets.strip.downcase
-
-        if input == "actors"
-            puts "=======ACTORS LIST======="
-            puts "LIST OF ACTORS/OBJS"
-            # 1. Tom Cruise
-            # 2. Anne Hathaway
-            display_info
-        elsif input == "movies"
-            puts "=======MOVIES LIST======="
-            puts "LIST OF MOVIES/OBJS"
-            puts "Try again"
+        puts "-------------"
+        puts "Please enter your latitude and longitude below:"
+        latitude = gets.strip
+        longitude = gets.strip
+        if (latitude != "quit") || (longitude != "quit")
+            @data = TrailsNearMe::API.get_trails(latitude, longitude)
+            @objects = TrailsNearMe::Trail.all 
             display_info
         else 
-            quit
+            quit 
         end 
+    end
+
+    
+    def display_info
+        puts "Here is your list:"
+        puts "-------------------"
+        @objects.each.with_index(1) {|trail, index| puts "#{index}. #{trail.name}"}
+        
+        puts  "please make a selection by index number:"
+        input = gets.strip.downcase
+        # @trail = @objects[input.to_i - 1]
+        if(input.to_i > 0)
+            @trail = @objects[input.to_i - 1]
+            puts "#{@trail.length}"
+            display_info
+        elsif (input == "quit")
+            quit 
+        elsif (input == "menu")
+            start
+        else
+            put  "Oops"
+            display_info 
+        end  
     end 
 
     #deal with inputs (loop to keep asking to get new info)
