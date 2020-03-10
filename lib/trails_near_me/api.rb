@@ -6,7 +6,7 @@
 
 class TrailsNearMe::API 
     def self.get_trails(latitude, longitude)
-        @trails_hash = HTTParty.get("https://www.hikingproject.com/data/get-trails?lat=#{latitude}&lon=#{longitude}&maxDistance=50&maxResults=500&key=200699798-1b74d08b49d66670e2eaaf40f569df56")
+        @trails_hash = HTTParty.get("https://www.hikingproject.com/data/get-trails?lat=#{latitude}&lon=#{longitude}&maxDistance=100&maxResults=500&key=200699798-1b74d08b49d66670e2eaaf40f569df56")
         
         if (@trails_hash["message"])
             puts "Oops, we can't find those coordinates!"

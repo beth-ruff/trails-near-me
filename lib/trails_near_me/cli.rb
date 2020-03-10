@@ -26,12 +26,15 @@ class TrailsNearMe::CLI
         puts "-------------------"
         @objects.each.with_index(1) {|trail, index| puts "#{index}. #{trail.name}"}
         
-        puts  "please make a selection by index number:"
+        puts  "please make a selection by index number for more information:"
         input = gets.strip.downcase
         # @trail = @objects[input.to_i - 1]
         if(input.to_i > 0)
             @trail = @objects[input.to_i - 1]
             puts "#{@trail.length}"
+            puts "#{@trail.location}"
+            puts "#{@trail.difficulty}"
+            puts "#{@trail.url}"
             display_info
         elsif (input == "quit")
             quit 
