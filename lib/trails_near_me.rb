@@ -6,6 +6,7 @@ require "trails_near_me/cli"
 require "trails_near_me/api"
 require "trails_near_me/trail"
 
+
 # dependencies
 require "pry"
 require "httparty"

@@ -6,8 +6,9 @@ class TrailsNearMe::CLI
     # all inside start method
 
     def start
-        puts "Hello there!"
+        puts "Welcome to the Trails Near Me CLI!"
         puts "-------------"
+        puts "This app will find hiking trails near you based on your latitude and longitude."
         puts "Please enter your latitude and longitude below:"
         latitude = gets.strip
         longitude = gets.strip
@@ -28,13 +29,12 @@ class TrailsNearMe::CLI
         
         puts  "please make a selection by index number for more information:"
         input = gets.strip.downcase
-        # @trail = @objects[input.to_i - 1]
         if(input.to_i > 0)
             @trail = @objects[input.to_i - 1]
-            puts "#{@trail.length}"
-            puts "#{@trail.location}"
-            puts "#{@trail.difficulty}"
-            puts "#{@trail.url}"
+            puts "distance: #{@trail.length} miles"
+            puts "location: #{@trail.location}"
+            puts "difficulty: #{@trail.difficulty}"
+            puts "URL: #{@trail.url}"
             display_info
         elsif (input == "quit")
             quit 

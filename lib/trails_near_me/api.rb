@@ -3,11 +3,12 @@
 # build hashes out for objs
 # call custom class .new method
 # send those back to our CLI
-
+require 'pry'
 class TrailsNearMe::API 
+    
     def self.get_trails(latitude, longitude)
-        @trails_hash = HTTParty.get("https://www.hikingproject.com/data/get-trails?lat=#{latitude}&lon=#{longitude}&maxDistance=100&maxResults=500&key=200699798-1b74d08b49d66670e2eaaf40f569df56")
         
+        @trails_hash = HTTParty.get("https://www.hikingproject.com/data/get-trails?lat=#{latitude}&lon=#{longitude}&maxDistance=50&maxResults=10&key=200699798-1b74d08b49d66670e2eaaf40f569df56")
         if (@trails_hash["message"])
             puts "Oops, we can't find those coordinates!"
         else
@@ -17,9 +18,10 @@ class TrailsNearMe::API
                 difficulty: @trails_hash["trails"][0]["difficulty"],
                 length: @trails_hash["trails"][0]["length"],
                 url: @trails_hash["trails"][0]["url"]
-            }
+                }
             TrailsNearMe::Trail.new(trails_obj)
-        end 
+        end
     end
-
-end
+end 
+   
+            
