@@ -7,9 +7,12 @@ class TrailsNearMe::CLI
 
     def start
         puts "Welcome to the Trails Near Me CLI!"
-        puts "-------------"
+        puts "------------------------------------"
         puts "This app will find hiking trails near you based on your latitude and longitude."
-        puts "Please enter your latitude and longitude below:"
+        puts "------------------------------------"
+        puts "Hint: you can find a specific latitude and longitude by going to www.google.com/maps and entering your desired address. You can then right-click on the map's pin point, and from the new menu choose 'What's Here?' A box at the bottom of the page will appear with the coordinates that are required for your desired address."
+        puts "------------------------------------"
+        puts "Please enter your desired latitude below, then click return and enter your longitude:"
         latitude = gets.strip
         longitude = gets.strip
         if (latitude != "quit") || (longitude != "quit")
