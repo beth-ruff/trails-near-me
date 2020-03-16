@@ -15,6 +15,4 @@ class TrailsNearMe::Trail
         @@all << self 
     end 
 
-    # custom instance methods if needed
-
 end 

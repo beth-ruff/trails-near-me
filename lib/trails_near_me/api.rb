@@ -1,9 +1,3 @@
-# find api to
-# use set url
-# build hashes out for objs
-# call custom class .new method
-# send those back to our CLI
-require 'pry'
 class TrailsNearMe::API 
     
     def self.get_trails(latitude, longitude)

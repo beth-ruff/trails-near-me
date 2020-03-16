@@ -25,6 +25,8 @@ Or install it yourself as:
 
 Type the text below and follow the on screen prompts.
 
+    bin/trails_near_me
+
 <!-- Leave Development alone. -->
 ## Development
 

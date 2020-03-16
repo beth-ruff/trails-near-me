@@ -1,10 +1,5 @@
 class TrailsNearMe::CLI
     
-    #start should greet user, give a description
-    # get data from scraper/api file 
-    #create new custom objs
-    # all inside start method
-
     def start
         puts "Welcome to the Trails Near Me CLI!"
         puts "
