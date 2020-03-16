@@ -3,9 +3,7 @@
 <!-- what your app does, how to install it, and to use it.
 Google editable version of ReadMe. -->
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/trails_near_me`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Trails Near Me CLI gem. Here you can find hiking trails near you via the Hiking Project Data API. Happy hiking!
 
 ## Installation
 
@@ -25,7 +23,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the text below and follow the on screen prompts.
 
 <!-- Leave Development alone. -->
 ## Development
