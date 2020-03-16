@@ -7,12 +7,6 @@ class TrailsNearMe::Trail
         save 
     end
 
-    # def self.create_from_collection(trails_array)
-    #     trails_array.each {|trail|
-    #     TrailsNearMe::Trail.new(trail)
-    #     }
-    # end 
-
     def self.all
         @@all
     end 
