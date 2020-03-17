@@ -7,14 +7,16 @@ class TrailsNearMe::API
         if (@trails_hash["message"])
             puts "Oops, we can't find those coordinates!"
         else
+            @trails_hash["trails"].each do |trail|
             trails_obj = {
-                name: @trails_hash["trails"][0]["name"],
-                location: @trails_hash["trails"][0]["location"],
-                difficulty: @trails_hash["trails"][0]["difficulty"],
-                length: @trails_hash["trails"][0]["length"],
-                url: @trails_hash["trails"][0]["url"]
+                name: trail["name"],
+                location: trail["location"],
+                difficulty: trail["difficulty"],
+                length: trail["length"],
+                url: trail["url"]
                 }
-            TrailsNearMe::Trail.new(trails_obj)
+                TrailsNearMe::Trail.new(trails_obj)
+            end 
         end
     end
 end 
